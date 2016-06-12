@@ -49,19 +49,19 @@ for a few number of games using the `-games` and `-words` flags.
 ```shell
 $ go run hangman.go -words 100 -progress 1000 -games 5000
 100 words loaded
-1000 games played: 73 WINS 927 LOSSES 7 ACCURACY
-2000 games played: 408 WINS 1592 LOSSES 34 ACCURACY
-3000 games played: 1108 WINS 1892 LOSSES 70 ACCURACY
-4000 games played: 1975 WINS 2025 LOSSES 87 ACCURACY
-5000 games played: 2913 WINS 2087 LOSSES 94 ACCURACY
+1000 games played: 92 WINS 908 LOSSES 9% WIN RATE
+2000 games played: 447 WINS 1553 LOSSES 36% WIN RATE
+3000 games played: 1064 WINS 1936 LOSSES 62% WIN RATE
+4000 games played: 1913 WINS 2087 LOSSES 85% WIN RATE
+5000 games played: 2845 WINS 2155 LOSSES 93% WIN RATE
 
-Agent performance: 5000 games played, 2913 WINS 2087 LOSSES 58 ACCURACY
+Agent performance: 5000 games played, 2845 WINS 2155 LOSSES 57% WIN RATE
 ```
 
-Accuracy per progress report is isolated within that cycle, a 5000 games
-in this example. The accuracy report is meant to show the velocity of
-learning by the agent. The accuracy itself is mostly irrelevant at this
-point.
+"WIN RATE" per progress report is isolated within that cycle, a group of
+1000 games in this example. The win rate is meant to show the velocity
+of learning by the agent. If it is "learning", the win rate should be
+increasing until reaching convergence.
 
 As you can see, after 5000 games, the agent is able to "learn" and play
 hangman against a 100-word vocabulary.
