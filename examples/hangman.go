@@ -220,9 +220,9 @@ func main() {
 	progress := func() {
 		// Print our progress every 1000 rows.
 		if count > 0 && count%progressAt == 0 {
-			accuracy := float32(wins-lastWins) / float32(progressAt) * 100.0
+			rate := float32(wins-lastWins) / float32(progressAt) * 100.0
 			lastWins = wins
-			fmt.Printf("%d games played: %d WINS %d LOSSES %.0f ACCURACY\n", count, wins, count-wins, accuracy)
+			fmt.Printf("%d games played: %d WINS %d LOSSES %.0f%% WIN RATE\n", count, wins, count-wins, rate)
 		}
 	}
 
@@ -269,5 +269,5 @@ func main() {
 
 	progress()
 
-	fmt.Printf("\nAgent performance: %d games played, %d WINS %d LOSSES %.0f ACCURACY\n", count, wins, count-wins, float32(wins)/float32(count)*100.0)
+	fmt.Printf("\nAgent performance: %d games played, %d WINS %d LOSSES %.0f%% WIN RATE\n", count, wins, count-wins, float32(wins)/float32(count)*100.0)
 }
